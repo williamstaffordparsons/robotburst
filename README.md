@@ -6,8 +6,9 @@
 
 - [Introduction](README.md?tab=readme-ov-file#introduction)
 - [Author](README.md?tab=readme-ov-file#author)
-- [Reference](README.md?tab=readme-ov-file#reference)
-- [Benchmarks](README.md?tab=readme-ov-file#benchmarks)
+- [Motivation](README.md?tab=readme-ov-file#motivation)
+- [Implementation](README.md?tab=readme-ov-file#implementation)
+- [Speed Test Results](README.md?tab=readme-ov-file#speed-test-results)
 
 ## Introduction
 
@@ -25,7 +26,7 @@ As an enjoyer of video games, it was brought to my attention that high-fidelity 
 
 As a solution, I'm building RobotBurst as the ultimate 64-bit CSPRNG to outperform (in as many ways as possible) the fastest 64-bit CSPRNGs in the world.
 
-## Reference
+## Implementation
 
 RobotBurst was implemented in C (requiring the `stdint.h` header to define a 64-bit, unsigned integral type for `uint64_t`).
 
@@ -37,7 +38,7 @@ The `robotburst256` function modifies the state in a `struct robotburst256_state
 
 Each state variable (`a`, `b`, `c`, `d`, `e` and `f`) in a `struct robotburst256_state` instance must be seeded before generating a deterministic `robotburst256` sequence.
 
-## Benchmarks
+## Speed Test Results
 
 Each of the following results log the fastest process execution speed (in milliseconds) among several repetitions of a CSPRNG speed test (using `gcc -O3` from an AMD A4-9120C) that generates (and hashes) 1 billion pseudorandom `uint64_t` integers in a `#pragma GCC unroll 0` loop.
 
